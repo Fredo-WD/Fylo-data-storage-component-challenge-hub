@@ -1,0 +1,209 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ## Colors */
+
+    /* ### Primary */
+
+    --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --g-primary: hsl(6, 100%, 80%);
+    --g-secondary: hsl(335, 100%, 65%);
+
+    /* ### Neutral */
+
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    min-height: 100%;
+    background-image: url(./images/bg-mobile.png);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 100vh;
+    padding: 7.938rem 1.563rem;
+}
+
+.fylo {
+    background-color: var(--Dark-Blue);
+    border-top-right-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.1rem;
+    padding: 2.5rem;
+}
+
+.fylo__logo {
+    width: 50%;
+}
+
+.fylo__icons {
+    display: flex;
+    gap: 1.003rem;
+    
+}
+
+.icons__bg {
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--Very-Dark-Blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .7rem;
+}
+
+h1 {
+    font-size: 0.875rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 700;
+}
+
+strong {
+    color: var(--Pale-Blue);
+}
+
+.remaining-storage {
+    max-height: 10rem;
+    background-color: var(--Dark-Blue);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+    padding: 2rem;
+    gap: .8rem;
+    border-radius: 0.7rem;
+}
+
+.remaining-storage__progress {
+    min-width: 100%;
+    min-height: 3.7vh;
+    background-color: var(--Very-Dark-Blue);
+    opacity: 0.5;
+    border-radius: 0.625rem;
+}
+
+.progress__bar {
+    width: 75%;
+    min-height: 2.65vh;
+    background: linear-gradient( .25turn, var(--g-primary), var(--g-secondary) ) ;
+    border-radius: 0.7rem;
+    position: relative;
+    top: .19rem;
+    
+}
+
+.progress__bar::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 0.313rem;
+    border-color: #feffff;
+    border-radius: .6rem;
+    top: 0.2rem;
+    right: 0.125rem;
+}
+
+.remaining-storage__range {
+    display: flex;
+    justify-content: space-between;
+    color: var(--Pale-Blue);
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+.remaining-storage__gb-left {
+    width: 70%;
+    min-height: 4.5rem;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.7rem;
+    gap: .5rem;
+    position: relative;
+    top: 1vh;
+    left: 10vw;
+  
+}
+
+.gb-left__185 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Blue);
+}
+
+.gb-left__gb-left {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--Grayish-Blue);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media all and (min-width: 1440px) {
+    body {
+        background-color: var(--Very-Dark-Blue);
+        background-image: url(./images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+    .container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .fylo {
+        height: 12.563rem;
+        width: 24.3vw;
+    }
+
+    .remaining-storage {
+        max-height: 10rem;
+        width: 38vw;
+        margin-top: 2.6rem;
+    }
+
+    .remaining-storage__heading {
+        color: var(--Pale-Blue);
+        font-weight: 400;
+        align-self: flex-start;
+        padding-top: .5rem;
+    }
+
+    .remaining-storage__gb-left {
+        /* position: absolute; */
+        width: 12vw;
+        top: -11.8rem;
+        left: 19rem;
+    }
+
+    .remaining-storage__gb-left::after {
+        content: "";
+        position: absolute;
+        border-style: solid;
+        border-width: 0px 35px 35px 0;
+        border-color: transparent #feffff transparent transparent;
+        top: 60px;
+        right: 0;
+    }
+}
+
